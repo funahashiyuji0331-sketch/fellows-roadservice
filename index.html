@@ -87,7 +87,8 @@ header{
   font-size:clamp(28px,4.4vw,58px);font-weight:800;
   line-height:1.2;color:#fff;margin-bottom:20px;letter-spacing:-.025em
 }
-.h-ttl em{font-style:normal;color:#93c5fd}
+.h-ttl em{font-style:normal;color:#93c5fd;white-space:nowrap}
+.h-ttl .sp-br{display:none}
 .h-lead{animation:hUp .8s ease .5s both;
   font-size:clamp(14px,1.6vw,17px);color:rgba(255,255,255,.68);line-height:1.95;margin-bottom:40px
 }
@@ -355,6 +356,8 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
   .sticky{display:block}
   .cta-band{padding-bottom:88px}
   .sec,.trouble,.reasons,.staff,.insurance,.area,.cta-band{padding:72px 20px}
+  .h-ttl em{white-space:normal}
+  .h-ttl .sp-br{display:block}
 }
 @media(max-width:480px){
   .stats-inner{grid-template-columns:1fr}
@@ -386,7 +389,7 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
   <div class="hero-ov"></div>
   <div class="hero-ct">
     <div class="h-badge"><span class="dot"></span>24時間365日 即時対応</div>
-    <h1 class="h-ttl">最短30分で急行！<br>関東エリアの<br><em>レッカー・ロードサービス</em></h1>
+    <h1 class="h-ttl">最短30分で急行！<br>関東エリアの<br><em>レッカー・<br class="sp-br">ロードサービス</em></h1>
     <p class="h-lead">お電話で総額確定・追加請求なし。<br>まずは現場での復旧を最優先します。</p>
     <div class="h-cta">
       <a href="tel:050-1721-7231" class="btn-call">
