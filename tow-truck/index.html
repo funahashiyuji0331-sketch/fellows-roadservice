@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>レッカー搬送・事故車引き上げ｜カートラブル110番 関東エリア最短10分</title>
+<link rel="canonical" href="https://fellows-roadservice.jp/tow-truck/">
+<meta property="og:title" content="レッカー搬送・事故車引き上げ｜カートラブル110番">
+<meta property="og:description" content="関東エリアのレッカー搬送・事故車引き上げならお任せください。自社手配だからたらい回しナシ、最短10分で急行します。基本料金＋距離単価の明朗会計。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fellows-roadservice.jp/tow-truck/">
+<meta property="og:image" content="https://fellows-roadservice.jp/images/logo.png">
+<meta name="description" content="関東エリアのレッカー搬送・事故車引き上げならお任せください。自社手配だからたらい回しナシ、最短10分で急行します。基本料金＋距離単価の明朗会計。">
+<style>
+/* ── BASE CSS (トップページ共通) ── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --red:#c0392b;--red-d:#a93226;
+  --navy:#0d1b2a;--navy-m:#162234;--navy-l:#1e3050;
+  --off:#f7f8fa;--border:#e2e5ea;
+  --text:#111827;--muted:#6b7280;
+  --gold:#f0a500;
+  --font:'Helvetica Neue',Arial,'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:#fff;overflow-x:hidden;line-height:1.6}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+ul, ol{list-style:none;}
+
+/* ── SCROLL ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.35s}
+
+/* ── HEADER ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,.97);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 32px;height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+  box-shadow:0 1px 16px rgba(0,0,0,.06);
+}
+.logo img{height:38px;width:auto}
+.header-tel a{
+  display:flex;align-items:center;gap:9px;
+  background:var(--red);color:#fff;
+  padding:11px 22px;border-radius:4px;
+  font-size:15px;font-weight:700;letter-spacing:.5px;
+  box-shadow:0 2px 12px rgba(192,57,43,.3);
+  transition:background .2s,transform .2s;
+}
+.header-tel a:hover{background:var(--red-d);transform:translateY(-1px);}
+
+/* ── PAGE HEADER (下層用HERO) ── */
+.page-header {
+  margin-top: 68px;
+  background: var(--navy);
+  color: #fff;
+  padding: 80px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(192,57,43,0.15) 0%, transparent 50%);
+}
+.ph-badge {
+  display: inline-block; background: var(--red); color: #fff;
+  font-size: 12px; font-weight: 700; padding: 6px 16px; border-radius: 20px;
+  margin-bottom: 24px; letter-spacing: 1px;
+}
+.page-header h1 {
+  font-size: clamp(24px, 4vw, 42px); font-weight: 800; line-height: 1.3;
+  margin-bottom: 24px; letter-spacing: -0.02em; position: relative; z-index: 1;
+}
+.page-header p {
+  font-size: 15px; color: rgba(255,255,255,.7); line-height: 1.8;
+  max-width: 600px; margin: 0 auto; position: relative; z-index: 1;
+}
+
+/* ── SECTION BASE ── */
+.sec{padding:80px 32px}
+.sec-bg{background:var(--off)}
+.sec-in{max-width:960px;margin:0 auto}
+.s-hd{margin-bottom:48px; text-align:center;}
+.s-hd .divider{margin:16px auto; width:40px; height:3px; background:var(--red); transition:width .6s ease;}
+.s-hd.visible .divider{width:64px}
+.s-ttl{font-size:clamp(22px,3vw,32px);font-weight:800;color:var(--navy);line-height:1.3;}
+.s-sub{font-size:14px;color:var(--muted);margin-top:12px;}
+
+/* ── TROUBLE LIST ── */
+.trouble-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.t-item {
+  background: #fff; border: 1px solid var(--border); border-radius: 8px;
+  padding: 32px 24px; display: flex; align-items: flex-start; gap: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.02);
+}
+.t-icon {
+  width: 48px; height: 48px; flex-shrink: 0; background: var(--off);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  color: var(--red);
+}
+.t-item h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.t-item p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+/* ── REASONS ── */
+.r-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.r-box { background: #fff; padding: 40px 24px; border-radius: 8px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,.04); }
+.r-num { color: var(--red); font-weight: 800; font-size: 14px; letter-spacing: 2px; margin-bottom: 16px; }
+.r-box h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.5; }
+.r-box p { font-size: 13.5px; color: var(--muted); line-height: 1.8; text-align: left;}
+
+/* ── PRICE ── */
+.price-tbl { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,.04); }
+.price-tbl th, .price-tbl td { padding: 20px 24px; border-bottom: 1px solid var(--border); text-align: left; }
+.price-tbl th { background: var(--navy); color: #fff; font-weight: 600; width: 35%; }
+.price-tbl td { color: var(--text); font-weight: 700; font-size: 18px; }
+.price-tbl td span { font-size: 12px; font-weight: 400; color: var(--muted); margin-left: 8px; }
+.price-note { font-size: 13px; color: var(--muted); margin-top: 16px; text-align: right; }
+
+/* ── FLOW ── */
+.flow-wrap { display: flex; flex-direction: column; gap: 16px; }
+.flow-step {
+  display: flex; background: #fff; border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+}
+.fs-num {
+  background: var(--navy); color: #fff; width: 80px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; font-weight: 800; font-size: 24px; flex-shrink: 0;
+}
+.fs-num span { font-size: 10px; font-weight: 600; letter-spacing: 1px; margin-bottom: 4px; color: var(--gold); }
+.fs-txt { padding: 24px; }
+.fs-txt h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.fs-txt p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+/* ── FAQ ── */
+.faq-wrap { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+.faq-item { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+.faq-q { display: flex; gap: 16px; font-weight: 700; color: var(--navy); font-size: 16px; line-height: 1.5; margin-bottom: 12px; }
+.faq-q::before { content: 'Q.'; color: var(--red); font-size: 20px; }
+.faq-a { display: flex; gap: 16px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.faq-a::before { content: 'A.'; color: var(--navy); font-size: 20px; font-weight: 700; }
+
+/* ── AREA (共通簡易版) ── */
+.area-txt { text-align: center; font-size: 15px; color: var(--text); line-height: 2; font-weight: 500;}
+.area-txt span { color: var(--red); font-weight: 700; margin-right: 8px; }
+
+/* ── CTA BAND (共通) ── */
+.cta-band{background:var(--navy);padding:80px 32px;text-align:center;position:relative;overflow:hidden}
+.cta-band h2{font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;margin-bottom:12px;}
+.cta-band p{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:32px;}
+.btn-call-lt{
+  display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--navy);
+  padding:16px 40px;border-radius:4px;font-size:clamp(20px,2.5vw,28px);font-weight:800;
+  box-shadow:0 4px 24px rgba(255,255,255,.15); transition:transform .2s;
+}
+.btn-call-lt:hover{transform:translateY(-2px);}
+.btn-call-lt svg{width:24px;height:24px;color:var(--red)}
+
+/* ── FOOTER & STICKY ── */
+footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:28px 24px;font-size:12px;}
+.sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--red); box-shadow: 0 -2px 10px rgba(0,0,0,0.1);}
+.sticky a{display:flex;align-items:center;justify-content:center;gap:10px;color:#fff;font-size:18px;font-weight:800;padding:16px;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  header{padding:0 16px;height:60px}
+  .page-header{margin-top:60px; padding: 60px 20px;}
+  .sec{padding:60px 20px}
+  .trouble-list, .r-grid { grid-template-columns: 1fr; }
+  .fs-num { width: 60px; font-size: 20px; }
+  .fs-txt { padding: 16px; }
+  .price-tbl th, .price-tbl td { padding: 16px; font-size:15px; display:block; width:100%; text-align:center;}
+  .price-tbl th { border-bottom: none; }
+  .sticky{display:block}
+  .cta-band{padding-bottom:80px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="/">
+      <img src="/images/logo.png" alt="カートラブル110番" width="200" height="38"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <div class="logo-text" style="display:none">カートラブル<span>110番</span></div>
+    </a>
+  </div>
+  <div class="header-tel">
+    <a href="tel:050-1721-7231">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      050-1721-7231
+    </a>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="ph-badge reveal">レッカー専門サービス</div>
+  <h1 class="reveal d1">事故・故障車のレッカー搬送<br>関東エリア最短10分で急行</h1>
+  <p class="reveal d2">お電話一本で自社スタッフが直接現場へ！たらい回しナシでスピーディに解決します。基本料金＋距離単価の明朗会計で安心です。</p>
+</section>
+
+<section class="sec sec-bg">
+  <div class="sec-in">
+    <div class="s-hd reveal">
+      <h2 class="s-ttl">このような事故・トラブルで<br>レッカー手配にお困りですか？</h2>
+      <div class="divider"></div>
+      <p class="s-sub">どんな状況の引き上げ・搬送にもプロが対応します</p>
+    </div>
+    <div class="trouble-list">
+      <div class="t-item reveal">
+        <div class="t-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div>
+          <h3>事故により車が大破・自走不能</h3>
+          <p>交差点での衝突事故や、単独事故で車が動かせない状況。二次被害を防ぐため、安全かつ迅速にレッカー車へ積載・搬送します。</p>
+        </div>
+      </div>
+      <div class="t-item reveal d1">
+        <div class="t-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div>
+          <h3>走行中にエンジン停止・故障</h3>
+          <p>一般道で突然エンジンが止まった、異音がして動かなくなった等。現場での復旧が不可能な場合は、最寄りの修理工場等へ搬送します。</p>
+        </div>
+      </div>
+      <div class="t-item reveal">
+        <div class="t-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M21 12H3"/><path d="M16 6l5 6-5 6"/></svg>
+        </div>
+        <div>
+          <h3>側溝への脱輪・縁石への乗り上げ</h3>
+          <p>雪道や細い路地でタイヤが落ちてしまった状態からの引き上げ作業。ウインチ等を使用し、車体に傷がつかないよう慎重に救出します。</p>
+        </div>
+      </div>
+      <div class="t-item reveal d1">
+        <div class="t-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div>
+          <h3>地下・立体駐車場で動けなくなった</h3>
+          <p>高さ制限があり通常のレッカー車が入らない地下駐車場やタワーパーキングでのトラブル。特殊機材を使用し、引き出し作業を行います。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-in">
+    <div class="s-hd reveal">
+      <h2 class="s-ttl">カートラブル110番の<br>レッカー搬送が選ばれる理由</h2>
+      <div class="divider"></div>
+      <p class="s-sub">到着の早さと、安心の料金設定が強みです</p>
+    </div>
+    <div class="r-grid">
+      <div class="r-box reveal">
+        <div class="r-num">REASON.01</div>
+        <h3>自社手配だから実現できる<br>「最短10分」のスピード急行</h3>
+        <p>「他で手配したら到着まで数時間かかると言われた」という方へ。当社は仲介業者を挟まず、エリアを巡回している自社スタッフが直接現場へ向かうため、たらい回しにされず最短ルートでお伺いします。</p>
+      </div>
+      <div class="r-box reveal d1">
+        <div class="r-num">REASON.02</div>
+        <h3>基本料金＋距離単価の<br>明朗会計で安心</h3>
+        <p>悪徳業者の被害が多発していますが、当社は基本作業料＋搬送距離という明確な料金テーブルをご用意。お電話の時点で概算をしっかりお伝えし、現場での不当な釣り上げは一切行いません。</p>
+      </div>
+      <div class="r-box reveal d2">
+        <div class="r-num">REASON.03</div>
+        <h3>狭い道やローダウン車など<br>特殊な状況にも対応</h3>
+        <p>レッカー車が入りにくい狭小地での作業や、バンパーが擦りやすい車高の低い車でもご相談ください。現場の状況に合わせた牽引・積載方法を判断し、熟練スタッフが安全・確実にお車を移動させます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-bg">
+  <div class="sec-in">
+    <div class="s-hd reveal">
+      <h2 class="s-ttl">レッカー搬送・引き上げ作業の料金表</h2>
+      <div class="divider"></div>
+      <p class="s-sub">作業前にお見積りを提示し、ご納得いただいてから作業を開始します</p>
+    </div>
+    <table class="price-tbl reveal">
+      <tr>
+        <th>基本出張・作業料金</th>
+        <td>¥10,000 〜 <span>(税込)</span></td>
+      </tr>
+      <tr>
+        <th>レッカー搬送費（距離加算）</th>
+        <td>¥800 <span>/ 1kmごと</span></td>
+      </tr>
+      <tr>
+        <th>特殊引き上げ作業（脱輪・落輪など）</th>
+        <td>¥5,000 〜 <span>(状況により変動)</span></td>
+      </tr>
+    </table>
+    <p class="price-note reveal d1">※上記は目安料金です。車種や現場の状況により変動する場合があります。<br>※お電話でのヒアリング時に、可能な限り正確な概算をお伝えいたします。</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-in">
+    <div class="s-hd reveal">
+      <h2 class="s-ttl">レッカー手配から搬送完了までの流れ</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="flow-wrap">
+      <div class="flow-step reveal">
+        <div class="fs-num"><span>STEP</span>01</div>
+        <div class="fs-txt">
+          <h3>お電話で状況のご確認・概算のお見積り</h3>
+          <p>お電話にて「現在地」「車種」「トラブルの状況（事故か故障かなど）」をお伺いします。その場で到着までの目安時間と、概算の料金をお伝えいたします。</p>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="fs-num"><span>STEP</span>02</div>
+        <div class="fs-txt">
+          <h3>自社スタッフが現場へ急行</h3>
+          <p>最短ルートで自社のレッカー車が現場へ向かいます。到着後、改めてお車の状態と周囲の安全を確認し、確定のお見積り金額をご提示します。</p>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="fs-txt">
+          <h3>安全に積載・ご指定の場所へ搬送</h3>
+          <p>金額にご納得いただけましたら、お車に傷がつかないよう慎重にレッカー車へ積載し、ご自宅やディーラー、指定の修理工場などへ安全に搬送いたします。</p>
+        </div>
+        <div class="fs-num" style="background:var(--red)"><span>STEP</span>03</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-bg">
+  <div class="sec-in">
+    <div class="s-hd reveal">
+      <h2 class="s-ttl">レッカー搬送に関するよくあるご質問</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item reveal">
+        <div class="faq-q">電話してからどれくらいで到着しますか？</div>
+        <div class="faq-a">現場のエリアや交通状況によりますが、最短10分〜で到着可能です。巡回中のスタッフがダイレクトに向かうためスピーディな対応が可能です。</div>
+      </div>
+      <div class="faq-item reveal d1">
+        <div class="faq-q">ディーラーや行きつけの修理工場、自宅など、指定した場所へ運んでもらえますか？</div>
+        <div class="faq-a">はい、可能です。お客様のご希望される修理工場やご自宅など、指定の目的地まで安全にお車を搬送いたします。</div>
+      </div>
+      <div class="faq-item reveal d2">
+        <div class="faq-q">レッカー車に一緒に同乗して帰ることはできますか？</div>
+        <div class="faq-a">申し訳ございません。道路交通法および安全上の観点から、お客様のレッカー車への同乗は原則お断りしております。ご自身での移動手段（タクシーや公共交通機関）の手配をお願いいたします。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-in reveal">
+    <div class="s-hd">
+      <h2 class="s-ttl">関東エリア スピード出動対応地域</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="area-txt">
+      <span>東京都</span>23区・多摩地区 全域対応<br>
+      <span>埼玉県</span>さいたま市・川越・越谷・川口 ほか<br>
+      <span>千葉県</span>千葉市・船橋・市川・松戸・柏 ほか<br>
+      <span>群馬県</span>前橋・高崎・太田・伊勢崎・桐生 ほか
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="reveal">
+    <h2>まずはお電話で状況をお聞かせください</h2>
+    <p>到着時間と概算料金をすぐにお調べいたします</p>
+    <a href="tel:050-1721-7231" class="btn-call-lt">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      050-1721-7231
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 合同会社fellows / カートラブル110番 All Rights Reserved.</p>
+</footer>
+
+<div class="sticky">
+  <a href="tel:050-1721-7231">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    タップして今すぐ電話
+  </a>
+</div>
+
+<script>
+(function(){
+  // ── Reveal on scroll ──
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        var d = e.target.querySelector('.divider');
+        if(d) d.style.width = '64px';
+        io.unobserve(e.target);
+      }
+    });
+  },{ rootMargin: "0px", threshold: 0 });
+  document.querySelectorAll('.reveal').forEach(function(el){
+    io.observe(el);
+  });
+})();
+</script>
+</body>
+</html>
