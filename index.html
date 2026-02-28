@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カートラブル110番｜関東レッカー・ロードサービス 24時間365日対応</title>
+<meta name="description" content="群馬・埼玉・千葉・東京のレッカー・ロードサービス。バッテリー上がり・パンク・事故対応。最短30分急行。明朗会計。24時間365日対応。">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --red:#c0392b;--red-d:#a93226;
+  --navy:#0d1b2a;--navy-m:#162234;--navy-l:#1e3050;
+  --off:#f7f8fa;--border:#e2e5ea;
+  --text:#111827;--muted:#6b7280;
+  --gold:#f0a500;
+  --font:'Helvetica Neue',Arial,'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:#fff;overflow-x:hidden;line-height:1.6}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+
+/* ── SCROLL ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-50px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(50px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.35s}
+
+/* ── HEADER ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,.97);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 32px;height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+  box-shadow:0 1px 16px rgba(0,0,0,.06);
+  transition:box-shadow .3s
+}
+.logo img{height:38px;width:auto}
+.logo-text{font-size:1.05rem;font-weight:800;color:var(--navy);display:none}
+.logo-text span{color:var(--red)}
+.header-tel a{
+  display:flex;align-items:center;gap:9px;
+  background:var(--red);color:#fff;
+  padding:11px 22px;border-radius:4px;
+  font-size:15px;font-weight:700;letter-spacing:.5px;
+  transition:background .2s,transform .2s,box-shadow .2s;
+  box-shadow:0 2px 12px rgba(192,57,43,.3)
+}
+.header-tel a:hover{background:var(--red-d);transform:translateY(-1px);box-shadow:0 4px 20px rgba(192,57,43,.4)}
+
+/* ── HERO ── */
+.hero{
+  margin-top:68px;position:relative;
+  height:calc(100svh - 68px);min-height:560px;max-height:880px;
+  overflow:hidden;display:flex;align-items:center
+}
+.hero-bg{
+  position:absolute;inset:-60px 0;
+  width:100%;height:calc(100% + 120px);
+  object-fit:cover;object-position:center;
+  will-change:transform
+}
+.hero-ov{
+  position:absolute;inset:0;
+  background:linear-gradient(115deg,rgba(13,27,42,.93) 0%,rgba(13,27,42,.65) 50%,rgba(13,27,42,.2) 100%)
+}
+.hero-ct{position:relative;z-index:1;padding:0 8%;max-width:740px}
+
+/* hero entrance animations */
+@keyframes hUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes hFade{from{opacity:0}to{opacity:1}}
+.h-badge{animation:hUp .7s ease .15s both;
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.07);
+  backdrop-filter:blur(6px);color:rgba(255,255,255,.8);
+  font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
+  padding:7px 18px;border-radius:20px;margin-bottom:28px
+}
+.h-badge .dot{width:7px;height:7px;border-radius:50%;background:#4ade80}
+@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(74,222,128,.4)}50%{opacity:.6;box-shadow:0 0 0 6px rgba(74,222,128,0)}}
+.h-badge .dot{animation:blink 2s infinite}
+.h-ttl{animation:hUp .8s ease .3s both;
+  font-size:clamp(28px,4.4vw,58px);font-weight:800;
+  line-height:1.2;color:#fff;margin-bottom:20px;letter-spacing:-.025em
+}
+.h-ttl em{font-style:normal;color:#93c5fd}
+.h-lead{animation:hUp .8s ease .5s both;
+  font-size:clamp(14px,1.6vw,17px);color:rgba(255,255,255,.68);line-height:1.95;margin-bottom:40px
+}
+.h-cta{animation:hUp .8s ease .7s both;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.btn-call{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--red);color:#fff;
+  padding:16px 32px;border-radius:4px;
+  font-size:clamp(20px,2.6vw,30px);font-weight:800;letter-spacing:1px;
+  box-shadow:0 4px 28px rgba(192,57,43,.45);
+  transition:background .2s,transform .2s,box-shadow .2s;
+  position:relative;overflow:hidden
+}
+.btn-call::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);
+  transform:translateX(-100%);transition:transform .5s
+}
+.btn-call:hover::after{transform:translateX(100%)}
+.btn-call:hover{background:var(--red-d);transform:translateY(-2px);box-shadow:0 8px 40px rgba(192,57,43,.5)}
+.h-note{animation:hFade 1s ease 1s both;font-size:11px;color:rgba(255,255,255,.35);margin-top:12px;letter-spacing:.5px}
+
+/* scroll indicator */
+.scroll-ind{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  animation:hFade 1s ease 1.2s both;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:rgba(255,255,255,.35);font-size:10px;letter-spacing:2px;text-transform:uppercase
+}
+@keyframes scrollBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.scroll-ind svg{animation:scrollBounce 1.5s ease infinite}
+
+/* ── STATS BAR ── */
+.stats{background:var(--navy);padding:0}
+.stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr)}
+.stat{
+  padding:36px 24px;text-align:center;
+  border-right:1px solid rgba(255,255,255,.08);
+  position:relative;overflow:hidden
+}
+.stat:last-child{border-right:none}
+.stat::before{
+  content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:0;height:2px;background:var(--red);transition:width .6s ease
+}
+.stat.visible::before{width:60%}
+.stat-num{font-size:clamp(28px,4vw,44px);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1}
+.stat-num span{color:var(--gold)}
+.stat-label{font-size:12px;color:rgba(255,255,255,.45);margin-top:8px;letter-spacing:.5px}
+
+/* ── SECTION BASE ── */
+.sec{padding:100px 32px}
+.sec-in{max-width:1040px;margin:0 auto}
+.s-hd{margin-bottom:56px}
+.s-hd.ct{text-align:center}
+.s-hd.ct .divider{margin:16px auto}
+.s-ttl{font-size:clamp(22px,3vw,34px);font-weight:800;color:var(--navy);line-height:1.28;letter-spacing:-.02em}
+.s-sub{font-size:14px;color:var(--muted);margin-top:10px;line-height:1.75}
+.divider{width:40px;height:3px;background:var(--red);margin:16px 0;transition:width .6s ease}
+.s-hd.visible .divider{width:64px}
+
+/* ── TROUBLE ── */
+.trouble{background:var(--navy);padding:100px 32px}
+.trouble .s-ttl{color:#fff}
+.trouble .s-sub{color:rgba(255,255,255,.4)}
+.trouble-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:3px;border-radius:12px;overflow:hidden;margin-top:56px
+}
+.tc{
+  position:relative;overflow:hidden;
+  aspect-ratio:3/4;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  text-decoration:none;background:var(--navy-m)
+}
+.tc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.16,1,.3,1),filter .5s}
+.tc:hover img{transform:scale(1.08);filter:brightness(1.1)}
+.tc-ov{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(13,27,42,.95) 0%,rgba(13,27,42,.3) 55%,transparent 100%);
+  transition:background .4s
+}
+.tc:hover .tc-ov{background:linear-gradient(to top,rgba(169,50,38,.92) 0%,rgba(169,50,38,.25) 55%,transparent 100%)}
+.tc-bd{position:relative;z-index:1;padding:28px 24px;transform:translateY(8px);transition:transform .4s}
+.tc:hover .tc-bd{transform:translateY(0)}
+.tc-ic{width:32px;height:32px;color:rgba(255,255,255,.5);margin-bottom:14px;transition:color .3s,transform .3s}
+.tc:hover .tc-ic{color:#fff;transform:scale(1.1)}
+.tc-ttl{font-size:18px;font-weight:700;color:#fff;margin-bottom:6px;line-height:1.35}
+.tc-desc{font-size:12px;color:rgba(255,255,255,.55);line-height:1.65}
+.tc-arr{
+  display:inline-flex;align-items:center;gap:5px;
+  margin-top:16px;font-size:12px;font-weight:600;
+  color:rgba(255,255,255,.35);
+  transition:color .3s,gap .3s
+}
+.tc:hover .tc-arr{color:var(--gold);gap:10px}
+
+/* ── REASONS ── */
+.reasons{background:var(--off);padding:100px 32px}
+.r-list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.r-card{
+  background:#fff;padding:40px 28px;border-radius:8px;
+  border-top:3px solid transparent;
+  transition:border-color .3s,box-shadow .4s,transform .4s
+}
+.r-card:hover{border-top-color:var(--red);box-shadow:0 20px 60px rgba(0,0,0,.08);transform:translateY(-6px)}
+.r-num{font-size:10px;font-weight:700;color:var(--red);letter-spacing:3px;margin-bottom:20px;text-transform:uppercase}
+.r-ic{width:40px;height:40px;color:var(--navy);margin-bottom:20px;transition:transform .3s}
+.r-card:hover .r-ic{transform:scale(1.1) rotate(-5deg)}
+.r-card h3{font-size:15px;font-weight:700;color:var(--navy);line-height:1.6;margin-bottom:12px}
+.r-card p{font-size:13px;color:var(--muted);line-height:1.9}
+.r-hl{
+  display:inline-block;
+  background:#fef2f2;border-left:2px solid var(--red);
+  color:#b91c1c;font-size:12px;font-weight:600;
+  padding:7px 14px;margin-top:18px;line-height:1.6
+}
+
+/* ── MID CTA ── */
+.mid-cta{
+  background:var(--navy-m);padding:64px 32px;text-align:center;
+  position:relative;overflow:hidden
+}
+.mid-cta::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at center,rgba(192,57,43,.12) 0%,transparent 70%)
+}
+.mid-cta p{color:rgba(255,255,255,.45);font-size:14px;margin-bottom:20px;position:relative}
+.mid-cta .btn-call{position:relative;margin:0 auto}
+
+/* ── PRICE ── */
+.price-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:3px;margin-top:56px;border-radius:10px;overflow:hidden;border:1px solid var(--border)
+}
+.pi{
+  background:var(--off);padding:36px 28px;transition:background .3s,transform .3s;
+  position:relative;overflow:hidden
+}
+.pi::before{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:2px;background:var(--red);transform:scaleX(0);transition:transform .3s
+}
+.pi:hover::before{transform:scaleX(1)}
+.pi:hover{background:#fff;transform:translateY(-3px)}
+.pi-cat{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--muted);margin-bottom:10px;text-transform:uppercase}
+.pi-name{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:14px}
+.pi-price{font-size:clamp(22px,3vw,34px);font-weight:800;color:var(--red);letter-spacing:-.02em}
+.pi-price span{font-size:13px;font-weight:400;color:var(--muted);margin-left:6px}
+.price-note{text-align:center;font-size:12px;color:var(--muted);margin-top:20px;line-height:1.85}
+
+/* ── STAFF ── */
+.staff{background:var(--navy);padding:100px 32px}
+.staff .s-ttl{color:#fff}
+.staff .s-sub{color:rgba(255,255,255,.38)}
+.staff-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:3px;margin-top:56px;border-radius:10px;overflow:hidden
+}
+.si{aspect-ratio:4/3;overflow:hidden;position:relative}
+.si img{width:100%;height:100%;object-fit:cover;filter:grayscale(20%) brightness(.9);transition:transform .6s cubic-bezier(.16,1,.3,1),filter .4s}
+.si:hover img{transform:scale(1.06);filter:grayscale(0%) brightness(1)}
+.si::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(13,27,42,.4) 0%,transparent 50%);
+  opacity:1;transition:opacity .4s
+}
+.si:hover::after{opacity:0}
+
+/* ── INSURANCE ── */
+.insurance{background:#fff;padding:100px 32px}
+.ins-in{max-width:740px;margin:0 auto;text-align:center}
+.ins-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#eff6ff;border:1px solid #bfdbfe;color:#1d4ed8;
+  font-size:12px;font-weight:600;padding:6px 20px;border-radius:20px;margin-bottom:24px
+}
+.insurance h2{font-size:clamp(20px,2.8vw,30px);font-weight:800;color:var(--navy);margin-bottom:16px;line-height:1.35}
+.insurance p{font-size:14px;color:var(--muted);line-height:1.95;margin-bottom:36px}
+
+/* ── AREA ── */
+.area{background:var(--off);padding:100px 32px}
+.area-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+.a-card{
+  background:#fff;padding:32px 20px;text-align:center;border-radius:8px;
+  border:1px solid var(--border);
+  transition:border-color .3s,box-shadow .4s,transform .4s
+}
+.a-card:hover{border-color:var(--red);box-shadow:0 12px 40px rgba(192,57,43,.1);transform:translateY(-4px)}
+.a-ic{width:24px;height:24px;color:var(--red);margin:0 auto 14px;transition:transform .3s}
+.a-card:hover .a-ic{transform:scale(1.2)}
+.a-pref{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.a-cities{font-size:12px;color:var(--muted);line-height:1.9}
+
+/* ── COMPANY ── */
+.company-in{max-width:960px;margin:0 auto}
+.company-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.co-img{border-radius:8px;overflow:hidden;aspect-ratio:4/3;position:relative}
+.co-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.co-img:hover img{transform:scale(1.04)}
+.co-tbl{width:100%;border-collapse:collapse}
+.co-tbl tr{border-bottom:1px solid var(--border)}
+.co-tbl tr:last-child{border-bottom:none}
+.co-tbl th{padding:14px 0;font-size:10px;font-weight:700;color:var(--muted);letter-spacing:1.5px;vertical-align:top;white-space:nowrap;padding-right:24px;text-transform:uppercase}
+.co-tbl td{padding:14px 0;font-size:13px;color:var(--text);line-height:1.8}
+
+/* ── CTA BAND ── */
+.cta-band{
+  background:var(--navy);padding:100px 32px;text-align:center;
+  position:relative;overflow:hidden
+}
+.cta-band::before{
+  content:'';position:absolute;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(192,57,43,.15) 0%,transparent 70%);
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  animation:pulse 4s ease infinite
+}
+@keyframes pulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.15)}}
+.cta-band h2{font-size:clamp(22px,3vw,38px);font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-.025em;position:relative}
+.cta-band p{font-size:14px;color:rgba(255,255,255,.45);margin-bottom:36px;position:relative}
+.btn-call-lt{
+  display:inline-flex;align-items:center;gap:12px;
+  background:#fff;color:var(--navy);
+  padding:18px 48px;border-radius:4px;
+  font-size:clamp(20px,2.8vw,34px);font-weight:800;letter-spacing:1px;
+  box-shadow:0 4px 32px rgba(255,255,255,.15);
+  transition:background .2s,transform .2s,box-shadow .2s;
+  position:relative
+}
+.btn-call-lt:hover{background:var(--off);transform:translateY(-3px);box-shadow:0 12px 48px rgba(255,255,255,.2)}
+.btn-call-lt .ic{width:26px;height:26px;color:var(--red)}
+.cta-note{margin-top:16px;font-size:12px;color:rgba(255,255,255,.28);position:relative}
+.line-btn{
+  display:inline-flex;align-items:center;gap:10px;margin-top:30px;
+  background:#06C755;color:#fff;padding:13px 30px;border-radius:4px;
+  font-size:14px;font-weight:600;
+  box-shadow:0 4px 16px rgba(6,199,85,.3);
+  transition:background .2s,box-shadow .2s,transform .2s;
+  position:relative
+}
+.line-btn:hover{background:#05b34c;box-shadow:0 6px 24px rgba(6,199,85,.4);transform:translateY(-2px)}
+
+footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:28px 24px;font-size:12px;line-height:1.9}
+
+/* ── STICKY ── */
+.sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--red)}
+.sticky a{display:flex;align-items:center;justify-content:center;gap:10px;color:#fff;font-size:18px;font-weight:800;padding:14px;letter-spacing:.5px}
+.sticky a svg{width:20px;height:20px}
+.sticky-sub{font-size:10px;color:rgba(255,255,255,.6);text-align:center;padding-bottom:10px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  header{padding:0 16px;height:60px}
+  .hero{margin-top:60px;height:calc(100svh - 60px)}
+  .hero-ct{padding:0 6%}
+  .trouble-grid{grid-template-columns:1fr}
+  .tc{aspect-ratio:16/9}
+  .r-list{grid-template-columns:1fr}
+  .price-grid{grid-template-columns:1fr}
+  .staff-grid{grid-template-columns:1fr 1fr}
+  .area-grid{grid-template-columns:1fr 1fr}
+  .company-wrap{grid-template-columns:1fr;gap:32px}
+  .stats-inner{grid-template-columns:1fr 1fr}
+  .sticky{display:block}
+  .cta-band{padding-bottom:88px}
+  .sec,.trouble,.reasons,.staff,.insurance,.area,.cta-band{padding:72px 20px}
+}
+@media(max-width:480px){
+  .stats-inner{grid-template-columns:1fr}
+  .staff-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="images/logo.png" alt="カートラブル110番"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <div class="logo-text" style="display:none">カートラブル<span>110番</span></div>
+  </div>
+  <div class="header-tel">
+    <a href="tel:050-1721-7231">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      050-1721-7231
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-bg" id="heroBg" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80" alt="レッカー・ロードサービス">
+  <div class="hero-ov"></div>
+  <div class="hero-ct">
+    <div class="h-badge"><span class="dot"></span>24時間365日 即時対応</div>
+    <h1 class="h-ttl">最短30分で急行！<br>関東エリアの<br><em>レッカー・ロードサービス</em></h1>
+    <p class="h-lead">お電話で総額確定・追加請求なし。<br>まずは現場での復旧を最優先します。</p>
+    <div class="h-cta">
+      <a href="tel:050-1721-7231" class="btn-call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        050-1721-7231
+      </a>
+    </div>
+    <p class="h-note">通話料無料 / 群馬・埼玉・千葉・東京</p>
+  </div>
+  <div class="scroll-ind">
+    <span>SCROLL</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat reveal d1">
+      <div class="stat-num"><span class="count" data-target="30">0</span>分</div>
+      <div class="stat-label">最短到着時間</div>
+    </div>
+    <div class="stat reveal d2">
+      <div class="stat-num">24<span>h</span></div>
+      <div class="stat-label">365日対応</div>
+    </div>
+    <div class="stat reveal d3">
+      <div class="stat-num">¥<span class="count" data-target="10">0</span>,000〜</div>
+      <div class="stat-label">現場復旧料金</div>
+    </div>
+  </div>
+</div>
+
+<!-- TROUBLE -->
+<section class="trouble">
+  <div class="sec-in">
+    <div class="s-hd ct reveal">
+      <h2 class="s-ttl">お車のトラブル内容</h2>
+      <div class="divider"></div>
+      <p class="s-sub">該当するトラブルを選択 → 専門ページへご案内します</p>
+    </div>
+    <div class="trouble-grid">
+      <a href="/battery/" class="tc reveal d1">
+        <img src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=800&q=80" alt="バッテリー上がり">
+        <div class="tc-ov"></div>
+        <div class="tc-bd">
+          <svg class="tc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="11" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><path d="M10 12h4"/></svg>
+          <div class="tc-ttl">バッテリー上がり</div>
+          <div class="tc-desc">エンジンがかからない・セルが回らない</div>
+          <span class="tc-arr">専門ページへ <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg></span>
+        </div>
+      </a>
+      <a href="/punk/" class="tc reveal d2">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="パンク・バースト">
+        <div class="tc-ov"></div>
+        <div class="tc-bd">
+          <svg class="tc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="22"/><line x1="2" y1="12" x2="8" y2="12"/><line x1="16" y1="12" x2="22" y2="12"/></svg>
+          <div class="tc-ttl">パンク・バースト</div>
+          <div class="tc-desc">タイヤがパンクした・バーストした</div>
+          <span class="tc-arr">専門ページへ <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg></span>
+        </div>
+      </a>
+      <a href="/rekker/" class="tc reveal d3">
+        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80" alt="レッカー搬送">
+        <div class="tc-ov"></div>
+        <div class="tc-bd">
+          <svg class="tc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <div class="tc-ttl">事故・故障（レッカー）</div>
+          <div class="tc-desc">車が動かない・レッカー搬送が必要</div>
+          <span class="tc-arr">専門ページへ <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- REASONS -->
+<section class="reasons sec">
+  <div class="sec-in">
+    <div class="s-hd reveal">
+      <h2 class="s-ttl">はじめてでも安心な<br>3つの理由</h2>
+      <div class="divider"></div>
+      <p class="s-sub">「呼んだら高かった」を絶対に起こさない仕組みがあります</p>
+    </div>
+    <div class="r-list">
+      <div class="r-card reveal d1">
+        <div class="r-num">Reason 01</div>
+        <svg class="r-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <h3>法外な請求・現場での<br>不当な釣り上げは一切なし</h3>
+        <p>「キャンセル料10万円と言われた」——悪徳業者の被害は全国で多発しています。当社は料金設定が明確で、現場でのトラブルは一切ありません。</p>
+        <span class="r-hl">現場復旧 1〜2万円 / レッカー搬送 1km＝800円</span>
+      </div>
+      <div class="r-card reveal d2">
+        <div class="r-num">Reason 02</div>
+        <svg class="r-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        <h3>自動車保険の<br>ロードサービス適用もOK</h3>
+        <p>手持ちの現金がなくてもご安心ください。ご加入の任意保険を使ったご請求に対応可能。保険会社へ連絡いただければ実質負担0円になる場合があります。</p>
+        <span class="r-hl">実質負担 0円になる場合あり</span>
+      </div>
+      <div class="r-card reveal d3">
+        <div class="r-num">Reason 03</div>
+        <svg class="r-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <h3>「運ぶだけ」じゃない。<br>その場での解決を最優先</h3>
+        <p>バッテリー上がりもパンクも、まずは現場で直してご自身の車でお帰りいただくことを最優先します。搬送ありきの対応は一切しません。</p>
+        <span class="r-hl">現場復旧を最優先対応</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA -->
+<div class="mid-cta">
+  <p class="reveal">まずはお気軽にお電話ください。24時間365日対応しています。</p>
+  <a href="tel:050-1721-7231" class="btn-call reveal">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    050-1721-7231
+  </a>
+</div>
+
+<!-- PRICE -->
+<section class="sec">
+  <div class="sec-in">
+    <div class="s-hd ct reveal">
+      <h2 class="s-ttl">料金表</h2>
+      <div class="divider"></div>
+      <p class="s-sub">事前にお伝えしたお見積り以外の追加請求は一切いたしません</p>
+    </div>
+    <div class="price-grid">
+      <div class="pi reveal d1">
+        <div class="pi-cat">Battery</div>
+        <div class="pi-name">バッテリー上がり</div>
+        <div class="pi-price">¥10,000〜<span>税込</span></div>
+      </div>
+      <div class="pi reveal d2">
+        <div class="pi-cat">Flat Tire</div>
+        <div class="pi-name">パンク・タイヤ交換</div>
+        <div class="pi-price">¥10,000〜<span>税込</span></div>
+      </div>
+      <div class="pi reveal d3">
+        <div class="pi-cat">Towing</div>
+        <div class="pi-name">レッカー搬送</div>
+        <div class="pi-price">¥800<span>/ 1km</span></div>
+      </div>
+    </div>
+    <p class="price-note reveal">深夜・早朝・土日祝の割増なし。表示料金でご対応します。</p>
+  </div>
+</section>
+
+<!-- STAFF -->
+<section class="staff sec">
+  <div class="sec-in">
+    <div class="s-hd reveal">
+      <h2 class="s-ttl">現場対応スタッフ</h2>
+      <div class="divider"></div>
+      <p class="s-sub">経験豊富なスタッフが最短ルートで駆けつけます</p>
+    </div>
+    <div class="staff-grid">
+      <div class="si reveal d1"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80" alt="スタッフ1"></div>
+      <div class="si reveal d2"><img src="https://images.unsplash.com/photo-1504222490345-c075b7b51ca3?w=800&q=80" alt="スタッフ2"></div>
+      <div class="si reveal d3"><img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80" alt="スタッフ3"></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSURANCE -->
+<section class="insurance sec">
+  <div class="ins-in reveal">
+    <span class="ins-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      保険対応
+    </span>
+    <h2>自動車保険のロードサービス、使えます</h2>
+    <p>多くの任意保険にはロードサービス特約が付帯しています。当社は保険会社からの直接精算にも対応しているため、現金がない場面でも安心してご依頼いただけます。</p>
+    <a href="tel:050-1721-7231" class="btn-call" style="margin:0 auto">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      050-1721-7231
+    </a>
+  </div>
+</section>
+
+<!-- AREA -->
+<section class="area sec">
+  <div class="sec-in">
+    <div class="s-hd ct reveal">
+      <h2 class="s-ttl">スピード対応エリア</h2>
+      <div class="divider"></div>
+      <p class="s-sub">巡回中のスタッフが最短ルートで急行します</p>
+    </div>
+    <div class="area-grid">
+      <div class="a-card reveal d1">
+        <svg class="a-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <div class="a-pref">群馬県</div>
+        <div class="a-cities">前橋・高崎・太田<br>伊勢崎・桐生ほか</div>
+      </div>
+      <div class="a-card reveal d2">
+        <svg class="a-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <div class="a-pref">埼玉県</div>
+        <div class="a-cities">さいたま・川越<br>越谷・川口ほか</div>
+      </div>
+      <div class="a-card reveal d2">
+        <svg class="a-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <div class="a-pref">千葉県</div>
+        <div class="a-cities">千葉・船橋・市川<br>松戸・柏ほか</div>
+      </div>
+      <div class="a-card reveal d3">
+        <svg class="a-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <div class="a-pref">東京都</div>
+        <div class="a-cities">23区・多摩地区<br>全域対応</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY -->
+<section class="sec">
+  <div class="company-in">
+    <div class="s-hd reveal">
+      <h2 class="s-ttl">会社概要</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="company-wrap">
+      <div class="co-img reveal-left">
+        <img src="https://images.unsplash.com/photo-1612544448445-b8232cff3b6c?w=800&q=80" alt="合同会社fellows">
+      </div>
+      <table class="co-tbl reveal-right">
+        <tr><th>会社名</th><td>合同会社fellows</td></tr>
+        <tr><th>代表</th><td>舟橋 賢司</td></tr>
+        <tr><th>所在地</th><td>〒124-0021<br>東京都葛飾区細田4-18-6-203（グランシャリオ）</td></tr>
+        <tr><th>電話</th><td><a href="tel:050-1721-7231" style="color:var(--red);font-weight:700">050-1721-7231</a></td></tr>
+        <tr><th>許可番号</th><td>有償運送許可証<br>郡運企第637合許可</td></tr>
+        <tr><th>対応時間</th><td>24時間 / 365日</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="reveal">
+    <h2>今すぐお電話ください</h2>
+    <p>24時間365日、スタッフが待機しています</p>
+    <a href="tel:050-1721-7231" class="btn-call-lt">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      050-1721-7231
+    </a>
+    <div class="cta-note">深夜・早朝・土日祝 すべて対応 / 通話料無料</div>
+    <br>
+    <a href="YOUR_LINE_URL" class="line-btn" target="_blank" rel="noopener">
+      💬 LINEで無料相談・見積りをする
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 合同会社fellows / カートラブル110番 All Rights Reserved.</p>
+</footer>
+
+<div class="sticky">
+  <a href="tel:050-1721-7231">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    050-1721-7231
+  </a>
+  <div class="sticky-sub">タップして今すぐ電話 / 24時間365日対応</div>
+</div>
+
+<script>
+(function(){
+  // ── Parallax ──
+  var bg = document.getElementById('heroBg');
+  function onScroll(){
+    var y = window.scrollY;
+    if(bg) bg.style.transform = 'translateY(' + (y * 0.4) + 'px)';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // ── Reveal on scroll ──
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        // divider width trigger
+        var d = e.target.querySelector('.divider');
+        if(d) d.style.width = '64px';
+        // stat underline
+        if(e.target.classList.contains('stat')) e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.stat').forEach(function(el){
+    io.observe(el);
+  });
+
+  // ── Count up ──
+  var counted = false;
+  var countIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && !counted){
+        counted = true;
+        document.querySelectorAll('.count').forEach(function(el){
+          var target = +el.dataset.target;
+          var start = 0;
+          var dur = 1200;
+          var step = target / (dur / 16);
+          var timer = setInterval(function(){
+            start += step;
+            if(start >= target){ start = target; clearInterval(timer); }
+            el.textContent = Math.floor(start);
+          }, 16);
+        });
+      }
+    });
+  },{threshold:0.5});
+  var statsEl = document.querySelector('.stats');
+  if(statsEl) countIO.observe(statsEl);
+
+  // ── Header shadow on scroll ──
+  var header = document.querySelector('header');
+  window.addEventListener('scroll', function(){
+    header.style.boxShadow = window.scrollY > 10 ? '0 2px 24px rgba(0,0,0,.12)' : '0 1px 16px rgba(0,0,0,.06)';
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
