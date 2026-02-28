@@ -56,29 +56,35 @@ header{
 /* ── PAGE HEADER (下層用HERO) ── */
 .page-header {
   margin-top: 68px;
-  background: var(--navy);
+  background: url('/images/rekker/hero.webp') no-repeat center center/cover;
   color: #fff;
-  padding: 80px 32px;
+  padding: 100px 32px;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
+.page-header::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(13, 27, 42, 0.7); /* 暗いオーバーレイで文字を読みやすく */
+  z-index: 0;
+}
 .page-header::after {
   content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(circle at 80% 20%, rgba(192,57,43,0.15) 0%, transparent 50%);
+  background: radial-gradient(circle at 80% 20%, rgba(192,57,43,0.3) 0%, transparent 50%);
+  z-index: 0;
 }
 .ph-badge {
   display: inline-block; background: var(--red); color: #fff;
   font-size: 12px; font-weight: 700; padding: 6px 16px; border-radius: 20px;
-  margin-bottom: 24px; letter-spacing: 1px;
+  margin-bottom: 24px; letter-spacing: 1px; position: relative; z-index: 1;
 }
 .page-header h1 {
   font-size: clamp(24px, 4vw, 42px); font-weight: 800; line-height: 1.3;
-  margin-bottom: 24px; letter-spacing: -0.02em; position: relative; z-index: 1;
+  margin-bottom: 24px; letter-spacing: -0.02em; position: relative; z-index: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 .page-header p {
-  font-size: 15px; color: rgba(255,255,255,.7); line-height: 1.8;
-  max-width: 600px; margin: 0 auto; position: relative; z-index: 1;
+  font-size: 15px; color: rgba(255,255,255,.9); line-height: 1.8;
+  max-width: 600px; margin: 0 auto; position: relative; z-index: 1; text-shadow: 0 1px 5px rgba(0,0,0,0.5);
 }
 
 /* ── SECTION BASE ── */
@@ -95,23 +101,25 @@ header{
 .trouble-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .t-item {
   background: #fff; border: 1px solid var(--border); border-radius: 8px;
-  padding: 32px 24px; display: flex; align-items: flex-start; gap: 20px;
+  display: flex; flex-direction: column; overflow: hidden;
   box-shadow: 0 4px 16px rgba(0,0,0,.02);
 }
-.t-icon {
-  width: 48px; height: 48px; flex-shrink: 0; background: var(--off);
-  border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  color: var(--red);
+.t-img {
+  width: 100%; height: 200px; object-fit: cover;
+  border-bottom: 1px solid var(--border);
 }
-.t-item h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-.t-item p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+.t-txt { padding: 24px; }
+.t-txt h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.t-txt p { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
 /* ── REASONS ── */
 .r-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.r-box { background: #fff; padding: 40px 24px; border-radius: 8px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,.04); }
+.r-box { background: #fff; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,.04); }
+.r-img { width: 100%; height: 200px; object-fit: cover; }
+.r-txt { padding: 32px 24px; }
 .r-num { color: var(--red); font-weight: 800; font-size: 14px; letter-spacing: 2px; margin-bottom: 16px; }
-.r-box h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.5; }
-.r-box p { font-size: 13.5px; color: var(--muted); line-height: 1.8; text-align: left;}
+.r-txt h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.5; }
+.r-txt p { font-size: 13.5px; color: var(--muted); line-height: 1.8; text-align: left;}
 
 /* ── PRICE ── */
 .price-tbl { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,.04); }
@@ -122,7 +130,7 @@ header{
 .price-note { font-size: 13px; color: var(--muted); margin-top: 16px; text-align: right; }
 
 /* ── FLOW ── */
-.flow-wrap { display: flex; flex-direction: column; gap: 16px; }
+.flow-wrap { display: flex; flex-direction: column; gap: 24px; }
 .flow-step {
   display: flex; background: #fff; border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
 }
@@ -131,7 +139,9 @@ header{
   align-items: center; justify-content: center; font-weight: 800; font-size: 24px; flex-shrink: 0;
 }
 .fs-num span { font-size: 10px; font-weight: 600; letter-spacing: 1px; margin-bottom: 4px; color: var(--gold); }
-.fs-txt { padding: 24px; }
+.fs-img { width: 240px; flex-shrink: 0; }
+.fs-img img { width: 100%; height: 100%; object-fit: cover; }
+.fs-txt { padding: 24px; display: flex; flex-direction: column; justify-content: center; }
 .fs-txt h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
 .fs-txt p { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
@@ -170,8 +180,12 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
   .page-header{margin-top:60px; padding: 60px 20px;}
   .sec{padding:60px 20px}
   .trouble-list, .r-grid { grid-template-columns: 1fr; }
-  .fs-num { width: 60px; font-size: 20px; }
-  .fs-txt { padding: 16px; }
+  .t-img, .r-img { height: 180px; }
+  .flow-step { flex-direction: column; }
+  .fs-num { width: 100%; height: 48px; flex-direction: row; gap: 8px; font-size: 18px; }
+  .fs-num span { margin-bottom: 0; font-size: 12px; }
+  .fs-img { width: 100%; height: 180px; }
+  .fs-txt { padding: 20px; }
   .price-tbl th, .price-tbl td { padding: 16px; font-size:15px; display:block; width:100%; text-align:center;}
   .price-tbl th { border-bottom: none; }
   .sticky{display:block}
@@ -212,37 +226,29 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
     </div>
     <div class="trouble-list">
       <div class="t-item reveal">
-        <div class="t-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        </div>
-        <div>
+        <img src="/images/rekker/trouble1.webp" alt="事故により車が大破・自走不能" class="t-img">
+        <div class="t-txt">
           <h3>事故により車が大破・自走不能</h3>
           <p>交差点での衝突事故や、単独事故で車が動かせない状況。二次被害を防ぐため、安全かつ迅速にレッカー車へ積載・搬送します。</p>
         </div>
       </div>
       <div class="t-item reveal d1">
-        <div class="t-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        </div>
-        <div>
+        <img src="/images/rekker/trouble2.webp" alt="走行中にエンジン停止・故障" class="t-img">
+        <div class="t-txt">
           <h3>走行中にエンジン停止・故障</h3>
           <p>一般道で突然エンジンが止まった、異音がして動かなくなった等。現場での復旧が不可能な場合は、最寄りの修理工場等へ搬送します。</p>
         </div>
       </div>
       <div class="t-item reveal">
-        <div class="t-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M21 12H3"/><path d="M16 6l5 6-5 6"/></svg>
-        </div>
-        <div>
+        <img src="/images/rekker/trouble3.webp" alt="側溝への脱輪・縁石への乗り上げ" class="t-img">
+        <div class="t-txt">
           <h3>側溝への脱輪・縁石への乗り上げ</h3>
           <p>雪道や細い路地でタイヤが落ちてしまった状態からの引き上げ作業。ウインチ等を使用し、車体に傷がつかないよう慎重に救出します。</p>
         </div>
       </div>
       <div class="t-item reveal d1">
-        <div class="t-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <div>
+        <img src="/images/rekker/trouble4.webp" alt="地下・立体駐車場で動けなくなった" class="t-img">
+        <div class="t-txt">
           <h3>地下・立体駐車場で動けなくなった</h3>
           <p>高さ制限があり通常のレッカー車が入らない地下駐車場やタワーパーキングでのトラブル。特殊機材を使用し、引き出し作業を行います。</p>
         </div>
@@ -260,19 +266,28 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
     </div>
     <div class="r-grid">
       <div class="r-box reveal">
-        <div class="r-num">REASON.01</div>
-        <h3>自社手配だから実現できる<br>「最短10分」のスピード急行</h3>
-        <p>「他で手配したら到着まで数時間かかると言われた」という方へ。当社は仲介業者を挟まず、エリアを巡回している自社スタッフが直接現場へ向かうため、たらい回しにされず最短ルートでお伺いします。</p>
+        <img src="/images/rekker/reason1.webp" alt="自社手配だから実現できる最短10分のスピード急行" class="r-img">
+        <div class="r-txt">
+          <div class="r-num">REASON.01</div>
+          <h3>自社手配だから実現できる<br>「最短10分」のスピード急行</h3>
+          <p>「他で手配したら到着まで数時間かかると言われた」という方へ。当社は仲介業者を挟まず、エリアを巡回している自社スタッフが直接現場へ向かうため、たらい回しにされず最短ルートでお伺いします。</p>
+        </div>
       </div>
       <div class="r-box reveal d1">
-        <div class="r-num">REASON.02</div>
-        <h3>基本料金＋距離単価の<br>明朗会計で安心</h3>
-        <p>悪徳業者の被害が多発していますが、当社は基本作業料＋搬送距離という明確な料金テーブルをご用意。お電話の時点で概算をしっかりお伝えし、現場での不当な釣り上げは一切行いません。</p>
+        <img src="/images/rekker/reason2.webp" alt="基本料金＋距離単価の明朗会計で安心" class="r-img">
+        <div class="r-txt">
+          <div class="r-num">REASON.02</div>
+          <h3>基本料金＋距離単価の<br>明朗会計で安心</h3>
+          <p>悪徳業者の被害が多発していますが、当社は基本作業料＋搬送距離という明確な料金テーブルをご用意。お電話の時点で概算をしっかりお伝えし、現場での不当な釣り上げは一切行いません。</p>
+        </div>
       </div>
       <div class="r-box reveal d2">
-        <div class="r-num">REASON.03</div>
-        <h3>狭い道やローダウン車など<br>特殊な状況にも対応</h3>
-        <p>レッカー車が入りにくい狭小地での作業や、バンパーが擦りやすい車高の低い車でもご相談ください。現場の状況に合わせた牽引・積載方法を判断し、熟練スタッフが安全・確実にお車を移動させます。</p>
+        <img src="/images/rekker/reason3.webp" alt="狭い道やローダウン車など特殊な状況にも対応" class="r-img">
+        <div class="r-txt">
+          <div class="r-num">REASON.03</div>
+          <h3>狭い道やローダウン車など<br>特殊な状況にも対応</h3>
+          <p>レッカー車が入りにくい狭小地での作業や、バンパーが擦りやすい車高の低い車でもご相談ください。現場の状況に合わせた牽引・積載方法を判断し、熟練スタッフが安全・確実にお車を移動させます。</p>
+        </div>
       </div>
     </div>
   </div>
@@ -312,6 +327,9 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
     <div class="flow-wrap">
       <div class="flow-step reveal">
         <div class="fs-num"><span>STEP</span>01</div>
+        <div class="fs-img">
+          <img src="/images/rekker/step1.webp" alt="お電話で状況のご確認・概算のお見積り">
+        </div>
         <div class="fs-txt">
           <h3>お電話で状況のご確認・概算のお見積り</h3>
           <p>お電話にて「現在地」「車種」「トラブルの状況（事故か故障かなど）」をお伺いします。その場で到着までの目安時間と、概算の料金をお伝えいたします。</p>
@@ -319,17 +337,23 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
       </div>
       <div class="flow-step reveal">
         <div class="fs-num"><span>STEP</span>02</div>
+        <div class="fs-img">
+          <img src="/images/rekker/step2.webp" alt="自社スタッフが現場へ急行">
+        </div>
         <div class="fs-txt">
           <h3>自社スタッフが現場へ急行</h3>
           <p>最短ルートで自社のレッカー車が現場へ向かいます。到着後、改めてお車の状態と周囲の安全を確認し、確定のお見積り金額をご提示します。</p>
         </div>
       </div>
       <div class="flow-step reveal">
+        <div class="fs-num" style="background:var(--red)"><span>STEP</span>03</div>
+        <div class="fs-img">
+          <img src="/images/rekker/step3.webp" alt="安全に積載・ご指定の場所へ搬送">
+        </div>
         <div class="fs-txt">
           <h3>安全に積載・ご指定の場所へ搬送</h3>
           <p>金額にご納得いただけましたら、お車に傷がつかないよう慎重にレッカー車へ積載し、ご自宅やディーラー、指定の修理工場などへ安全に搬送いたします。</p>
         </div>
-        <div class="fs-num" style="background:var(--red)"><span>STEP</span>03</div>
       </div>
     </div>
   </div>
