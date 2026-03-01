@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>バッテリー上がり・ジャンピングスタート｜カートラブル110番 関東エリア最短10分</title>
+<link rel="preload" as="image" href="/images/battery/hero.webp">
+<link rel="canonical" href="https://fellows-roadservice.jp/battery/">
+<meta property="og:title" content="バッテリー上がり・ジャンピングスタート｜カートラブル110番 関東エリア最短10分">
+<meta property="og:description" content="関東エリアのバッテリー上がりはお任せください。自社スタッフが最短10分で急行し、ジャンピングスタートでエンジンを始動させます。ハイブリッド車対応、明朗会計。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fellows-roadservice.jp/battery/">
+<meta property="og:image" content="https://fellows-roadservice.jp/images/battery/hero.webp">
+<meta name="description" content="関東エリアのバッテリー上がりはお任せください。自社スタッフが最短10分で急行し、ジャンピングスタートでエンジンを始動させます。ハイブリッド車対応、明朗会計。">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "カートラブル110番トップ",
+          "item": "https://fellows-roadservice.jp/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "バッテリー上がり対応",
+          "item": "https://fellows-roadservice.jp/battery/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "バッテリー上がり・ジャンピングスタート",
+      "provider": {
+        "@type": "AutoRepair",
+        "name": "カートラブル110番（合同会社fellows）",
+        "telephone": "050-1721-7231",
+        "image": "https://fellows-roadservice.jp/images/logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "細田4-18-6-203 グランシャリオ",
+          "addressLocality": "葛飾区",
+          "addressRegion": "東京都",
+          "postalCode": "124-0021",
+          "addressCountry": "JP"
+        }
+      },
+      "areaServed": ["東京都", "埼玉県", "千葉県", "群馬県"],
+      "description": "関東エリアのバッテリー上がり対応。最短10分で自社スタッフが急行し、ジャンピングスタートでエンジンを始動させます。ハイブリッド車にも対応。"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "プリウスやアクアなどのハイブリッド車でも対応できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、対応可能です。ハイブリッド車特有の補機バッテリーへのジャンピングスタートを、専用機材を用いて安全かつ確実に行います。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "バッテリー上がりか、故障か分からないのですが…",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "現場でプロのスタッフが診断いたします。もしオルタネーター（発電機）の故障などでジャンピングスタートが効かない場合は、そのままレッカー搬送へ切り替えることも可能です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "自宅の駐車場（または地下駐車場）でも作業できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、可能です。ポータブルタイプのジャンプスターターを持参しますので、レッカー車が横付けできない狭い場所や地下駐車場でも問題なく作業できます。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+/* ── BASE CSS (トップページ共通) ── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --red:#c0392b;--red-d:#a93226;
+  --navy:#0d1b2a;--navy-m:#162234;--navy-l:#1e3050;
+  --off:#f7f8fa;--border:#e2e5ea;
+  --text:#111827;--muted:#6b7280;
+  --gold:#f0a500;
+  --font:'Helvetica Neue',Arial,'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:#fff;overflow-x:hidden;line-height:1.6}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+ul, ol{list-style:none;}
+
+/* ── SCROLL ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.35s}
+
+/* ── HEADER ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,.97);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 32px;height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+  box-shadow:0 1px 16px rgba(0,0,0,.06);
+}
+.logo img{height:38px;width:auto}
+.header-tel a{
+  display:flex;align-items:center;gap:9px;
+  background:var(--red);color:#fff;
+  padding:11px 22px;border-radius:4px;
+  font-size:15px;font-weight:700;letter-spacing:.5px;
+  box-shadow:0 2px 12px rgba(192,57,43,.3);
+  transition:background .2s,transform .2s;
+}
+.header-tel a:hover{background:var(--red-d);transform:translateY(-1px);}
+
+/* ── PAGE HEADER (下層用HERO) ── */
+.page-header {
+  margin-top: 0;
+  background: url('/images/battery/hero.webp') no-repeat center center/cover;
+  color: #fff;
+  padding: 100px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(13, 27, 42, 0.7);
+  z-index: 0;
+}
+.page-header::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(192,57,43,0.3) 0%, transparent 50%);
+  z-index: 0;
+}
+.ph-badge {
+  display: inline-block; background: var(--red); color: #fff;
+  font-size: 12px; font-weight: 700; padding: 6px 16px; border-radius: 20px;
+  margin-bottom: 24px; letter-spacing: 1px; position: relative; z-index: 1;
+}
+.page-header h1 {
+  font-size: clamp(24px, 4vw, 42px); font-weight: 800; line-height: 1.3;
+  margin-bottom: 24px; letter-spacing: -0.02em; position: relative; z-index: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+.page-header p {
+  font-size: 15px; color: rgba(255,255,255,.9); line-height: 1.8;
+  max-width: 600px; margin: 0 auto; position: relative; z-index: 1; text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+}
+
+/* ── SECTION BASE ── */
+.sec{padding:80px 32px}
+.sec-bg{background:var(--off)}
+.sec-in{max-width:960px;margin:0 auto}
+.s-hd{margin-bottom:48px; text-align:center;}
+.s-hd .divider{margin:16px auto; width:40px; height:3px; background:var(--red); transition:width .6s ease;}
+.s-hd.visible .divider{width:64px}
+.s-ttl{font-size:clamp(22px,3vw,32px);font-weight:800;color:var(--navy);line-height:1.3;}
+.s-sub{font-size:14px;color:var(--muted);margin-top:12px;}
+
+/* ── TROUBLE LIST ── */
+.trouble-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.t-item {
+  background: #fff; border: 1px solid var(--border); border-radius: 8px;
+  display: flex; flex-direction: column; overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,.02);
+}
+.t-img {
+  width: 100%; height: 200px; object-fit: cover;
+  border-bottom: 1px solid var(--border);
+}
+.t-txt { padding: 24px; }
+.t-txt h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.t-txt p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+/* ── REASONS ── */
+.r-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.r-box { background: #fff; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,.04); }
+.r-img { width: 100%; height: 200px; object-fit: cover; }
+.r-txt { padding: 32px 24px; }
+.r-num { color: var(--red); font-weight: 800; font-size: 14px; letter-spacing: 2px; margin-bottom: 16px; }
+.r-txt h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.5; }
+.r-txt p { font-size: 13.5px; color: var(--muted); line-height: 1.8; text-align: left;}
+
+/* ── PRICE ── */
+.price-tbl { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,.04); }
+.price-tbl th, .price-tbl td { padding: 20px 24px; border-bottom: 1px solid var(--border); text-align: left; }
+.price-tbl th { background: var(--navy); color: #fff; font-weight: 600; width: 35%; }
+.price-tbl td { color: var(--text); font-weight: 700; font-size: 18px; }
+.price-tbl td span { font-size: 12px; font-weight: 400; color: var(--muted); margin-left: 8px; }
+.price-note { font-size: 13px; color: var(--muted); margin-top: 16px; text-align: right; }
+
+/* ── FLOW ── */
+.flow-wrap { display: flex; flex-direction: column; gap: 24px; }
+.flow-step {
+  display: flex; background: #fff; border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+}
+.fs-num {
+  background: var(--navy); color: #fff; width: 80px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; font-weight: 800; font-size: 24px; flex-shrink: 0;
+}
+.fs-num span { font-size: 10px; font-weight: 600; letter-spacing: 1px; margin-bottom: 4px; color: var(--gold); }
+.fs-img { width: 240px; flex-shrink: 0; }
+.fs-img img { width: 100%; height: 100%; object-fit: cover; }
+.fs-txt { padding: 24px; display: flex; flex-direction: column; justify-content: center; }
+.fs-txt h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.fs-txt p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+/* ── FAQ ── */
+.faq-wrap { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+.faq-item { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+.faq-q { display: flex; gap: 16px; font-weight: 700; color: var(--navy); font-size: 16px; line-height: 1.5; margin-bottom: 12px; }
+.faq-q::before { content: 'Q.'; color: var(--red); font-size: 20px; }
+.faq-a { display: flex; gap: 16px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.faq-a::before { content: 'A.'; color: var(--navy); font-size: 20px; font-weight: 700; }
+
+/* ── AREA (共通簡易版) ── */
+.area-txt { text-align: center; font-size: 15px; color: var(--text); line-height: 2; font-weight: 500;}
+.area-txt span { color: var(--red); font-weight: 700; margin-right: 8px; }
+
+/* ── CTA BAND (共通) ── */
+.cta-band{background:var(--navy);padding:80px 32px;text-align:center;position:relative;overflow:hidden}
+.cta-band h2{font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;margin-bottom:12px;}
+.cta-band p{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:32px;}
+.btn-call-lt{
+  display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--navy);
+  padding:16px 40px;border-radius:4px;font-size:clamp(20px,2.5vw,28px);font-weight:800;
+  box-shadow:0 4px 24px rgba(255,255,255,.15); transition:transform .2s;
+}
+.btn-call-lt:hover{transform:translateY(-2px);}
+.btn-call-lt svg{width:24px;height:24px;color:var(--red)}
+
+/* ── FOOTER & STICKY ── */
+footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:28px 24px;font-size:12px;}
+.sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--red); box-shadow: 0 -2px 10px rgba(0,0,0,0.1);}
+.sticky a{display:flex;align-items:center;justify-content:center;gap:10px;color:#fff;font-size:18px;font-weight:800;padding:16px;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  header{padding:0 16px;height:60px}
+  .page-header{margin-top:0; padding: 60px 20px;}
+  .sec{padding:60px 20px}
+  .trouble-list, .r-grid { grid-template-columns: 1fr; }
+  .t-img, .r-img { height: 180px; }
+  .flow-step { flex-direction: column; }
+  .fs-num { width: 100%; height: 48px; flex-direction: row; gap: 8px; font-size: 18px; }
+  .fs-num span { margin-bottom: 0; font-size: 12px; }
+  .fs-img { width: 100%; height: 180px; }
+  .fs-txt { padding: 20px; }
+  .price-tbl th, .price-tbl td { padding: 16px; font-size:15px; display:block; width:100%; text-align:center;}
+  .price-tbl th { border-bottom: none; }
+  .sticky{display:block}
+  .cta-band{padding-bottom:80px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="/">
+      <img src="/images/logo.png" alt="カートラブル110番" width="200" height="38"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <div class="logo-text" style="display:none">カートラブル<span>110番</span></div>
+    </a>
+  </div>
+  <div class="header-tel">
+    <a href="tel:050-1721-7231">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      050-1721-7231
+    </a>
+  </div>
+</header>
+
+<nav aria-label="Breadcrumb" style="background:var(--off); padding:80px 32px 16px; margin-top:0;">
+  <div style="max-width:960px; margin:0 auto; font-size:12px; color:var(--muted);">
+    <a href="/" style="text-decoration:underline; color:var(--navy);">カートラブル110番トップ</a> &gt; <span aria-current="page">バッテリー上がり対応</span>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="ph-badge reveal">バッテリー上がり専門</div>
+  <h1 class="reveal d1">突然のバッテリー上がり<br>関東エリア最短10分で急行</h1>
+  <p class="reveal d2">エンジンがかからない、セルが回らないトラブルに！プロの機材によるジャンピングスタートで速やかにエンジンを復旧させます。プリウスなどのハイブリッド車も対応可能です。</p>
+</section>
+
+<section class="sec sec-bg">
+  <div class="sec-in">
+    <div class="s-hd reveal">
+      <h2 class="s-ttl">このようなバッテリーのトラブルで<br>お困りですか？</h2>
+      <div class="divider"></div>
+      <p class="s-sub">どんな車種・状況でもプロが駆けつけて対応します</p>
+    </div>
+    <div class="trouble-list">
+      <div class="t-item reveal">
+        <img src="/images/battery/trouble1.webp" alt="エンジンがかからない・セルが回らない" class="t-img" width="800" height="600" loading="lazy">
+        <div class="t-txt">
+          <h3>エンジンがかからない・セルモーターが回らない</h3>
+          <p>キーを回しても（ボタンを押しても）セルモーターが回らない、カチカチと音がするだけでエンジンがかからない。バッテリー上がりの典型的な症状です。</p>
+        </div>
+      </div>
+      <div class="t-item reveal d1">
+        <img src="/images/battery/trouble2.webp" alt="ライト・室内灯の消し忘れによるバッテリー上がり" class="t-img" width="800" height="600" loading="lazy">
+        <div class="t-txt">
+          <h3>ヘッドライトやハザード、室内灯を消し忘れた</h3>
+          <p>買い物や仕事の後、戻ってきたらバッテリーが上がっていた。ライトやハザードの消し忘れは最も多いバッテリー上がりの原因です。</p>
+        </div>
+      </div>
+      <div class="t-item reveal">
+        <img src="/images/battery/trouble3.webp" alt="ハイブリッド車の補機バッテリー上がり" class="t-img" width="800" height="600" loading="lazy">
+        <div class="t-txt">
+          <h3>ハイブリッド車（ハイブリッドシステム）が起動しない</h3>
+          <p>プリウス・アクア・ノートe-POWERなどのハイブリッド車でも、補機バッテリーが上がるとシステムが起動しません。専用の手順でジャンピングスタートいたします。</p>
+        </div>
+      </div>
+      <div class="t-item reveal d1">
+        <img src="/images/battery/trouble4.webp" alt="長期間放置による自然放電" class="t-img" width="800" height="600" loading="lazy">
+        <div class="t-txt">
+          <h3>車に長期間乗っておらず、自然放電してしまった</h3>
+          <p>出張や入院、旅行などで数週間〜数ヶ月車に乗らなかった結果、バッテリーが自然放電してしまうケースです。ジャンピングスタートで復旧可能です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-in">
+    <div class="s-hd reveal">
+      <h2 class="s-ttl">カートラブル110番の<br>バッテリー対応が選ばれる理由</h2>
+      <div class="divider"></div>
+      <p class="s-sub">到着の早さと、全車種対応の技術力が強みです</p>
+    </div>
+    <div class="r-grid">
+      <div class="r-box reveal">
+        <img src="/images/battery/reason1.webp" alt="最短10分でスタッフが急行" class="r-img" width="800" height="600" loading="lazy">
+        <div class="r-txt">
+          <div class="r-num">REASON.01</div>
+          <h3>自社スタッフがダイレクト出動！<br>最短10分で到着</h3>
+          <p>仲介業者を挟まず、エリアを巡回している自社スタッフが直接現場へ向かうため、たらい回しにされず最短ルートでお伺いします。出先でのバッテリー上がりでも安心です。</p>
+        </div>
+      </div>
+      <div class="r-box reveal d1">
+        <img src="/images/battery/reason2.webp" alt="ハイブリッド車・全車種に安全対応" class="r-img" width="800" height="600" loading="lazy">
+        <div class="r-txt">
+          <div class="r-num">REASON.02</div>
+          <h3>12V/24V、ハイブリッド車など<br>全車種に安全対応</h3>
+          <p>普通車はもちろん、ハイブリッド車・外国車・トラックまで幅広く対応。車種ごとに異なるジャンピングスタートの手順を熟知したスタッフが、安全・確実に作業します。</p>
+        </div>
+      </div>
+      <div class="r-box reveal d2">
+        <img src="/images/battery/reason3.webp" alt="分かりやすい明朗会計" class="r-img" width="800" height="600" loading="lazy">
+        <div class="r-txt">
+          <div class="r-num">REASON.03</div>
+          <h3>基本出張料＋作業代の<br>分かりやすい明朗会計</h3>
+          <p>お電話の時点で概算をしっかりお伝えし、現場での不当な釣り上げは一切行いません。基本出張料金＋作業代という明確な料金テーブルで、安心してご依頼いただけます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-bg">
+  <div class="sec-in">
+    <div class="s-hd reveal">
+      <h2 class="s-ttl">バッテリー上がり復旧作業の料金表</h2>
+      <div class="divider"></div>
+      <p class="s-sub">作業前にお見積りを提示し、ご納得いただいてから作業を開始します</p>
+    </div>
+    <table class="price-tbl reveal">
+      <tr>
+        <th>基本出張料金</th>
+        <td>¥10,000 〜 <span>(税込)</span></td>
+      </tr>
+      <tr>
+        <th>ジャンピングスタート作業（普通車）</th>
+        <td>¥3,000 〜 <span>(税込)</span></td>
+      </tr>
+      <tr>
+        <th>ジャンピングスタート作業（ハイブリッド・外車・トラック）</th>
+        <td>¥5,000 〜 <span>(税込)</span></td>
+      </tr>
+    </table>
+    <p class="price-note reveal d1">※上記は目安料金です。車種や現場の状況により変動する場合があります。<br>※お電話でのヒアリング時に、可能な限り正確な概算をお伝えいたします。</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-in">
+    <div class="s-hd reveal">
+      <h2 class="s-ttl">ご依頼からエンジン始動（解決）までの流れ</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="flow-wrap">
+      <div class="flow-step reveal">
+        <div class="fs-num"><span>STEP</span>01</div>
+        <div class="fs-img">
+          <img src="/images/battery/step1.webp" alt="電話で状況確認・概算お見積り" width="800" height="600" loading="lazy">
+        </div>
+        <div class="fs-txt">
+          <h3>お電話で状況確認・概算お見積り</h3>
+          <p>お電話にて「現在地」「車種」「症状（セルが回らない、カチカチ音がする等）」をお伺いします。その場で到着までの目安時間と、概算の料金をお伝えいたします。</p>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="fs-num"><span>STEP</span>02</div>
+        <div class="fs-img">
+          <img src="/images/battery/step2.webp" alt="現場へ急行・安全確保" width="800" height="600" loading="lazy">
+        </div>
+        <div class="fs-txt">
+          <h3>最短ルートで現場へ急行・安全確保</h3>
+          <p>自社スタッフが最短ルートで現場へ向かいます。到着後、まずお車の状態と周囲の安全を確認し、確定のお見積りをご提示します。</p>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="fs-num" style="background:var(--red)"><span>STEP</span>03</div>
+        <div class="fs-img">
+          <img src="/images/battery/step3.webp" alt="ジャンピングスタートでエンジン始動" width="800" height="600" loading="lazy">
+        </div>
+        <div class="fs-txt">
+          <h3>ケーブル接続・ジャンピングスタート作業</h3>
+          <p>プロ仕様のジャンプスターターまたはブースターケーブルを使用し、安全にエンジンを始動させます。どうしても復旧しない場合やオルタネーター故障の場合は<a href="/tow-truck/" style="color:var(--red); text-decoration:underline; font-weight:bold;">レッカー搬送</a>にて修理工場へお運びします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-bg">
+  <div class="sec-in">
+    <div class="s-hd reveal">
+      <h2 class="s-ttl">バッテリー上がりのよくあるご質問</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item reveal">
+        <div class="faq-q">プリウスやアクアなどのハイブリッド車でも対応できますか？</div>
+        <div class="faq-a">はい、対応可能です。ハイブリッド車特有の補機バッテリーへのジャンピングスタートを、専用機材を用いて安全かつ確実に行います。</div>
+      </div>
+      <div class="faq-item reveal d1">
+        <div class="faq-q">バッテリー上がりか、故障か分からないのですが…</div>
+        <div class="faq-a">現場でプロのスタッフが診断いたします。もしオルタネーター（発電機）の故障などでジャンピングスタートが効かない場合は、そのまま<a href="/tow-truck/" style="color:var(--red); text-decoration:underline; font-weight:bold;">レッカー搬送</a>へ切り替えることも可能です。</div>
+      </div>
+      <div class="faq-item reveal d2">
+        <div class="faq-q">自宅の駐車場（または地下駐車場）でも作業できますか？</div>
+        <div class="faq-a">はい、可能です。ポータブルタイプのジャンプスターターを持参しますので、レッカー車が横付けできない狭い場所や地下駐車場でも問題なく作業できます。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-in reveal">
+    <div class="s-hd">
+      <h2 class="s-ttl">関東エリア スピード出動対応地域</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="area-txt">
+      <span>東京都</span>23区・多摩地区 全域対応<br>
+      <span>埼玉県</span>さいたま市・川越・越谷・川口 ほか<br>
+      <span>千葉県</span>千葉市・船橋・市川・松戸・柏 ほか<br>
+      <span>群馬県</span>前橋・高崎・太田・伊勢崎・桐生 ほか
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="reveal">
+    <h2>まずはお電話で状況をお聞かせください</h2>
+    <p>到着時間と概算料金をすぐにお調べいたします</p>
+    <a href="tel:050-1721-7231" class="btn-call-lt">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      050-1721-7231
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 合同会社fellows / カートラブル110番 All Rights Reserved.</p>
+</footer>
+
+<div class="sticky">
+  <a href="tel:050-1721-7231">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    タップして今すぐ電話
+  </a>
+</div>
+
+<script>
+(function(){
+  // ── Reveal on scroll ──
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        var d = e.target.querySelector('.divider');
+        if(d) d.style.width = '64px';
+        io.unobserve(e.target);
+      }
+    });
+  },{ rootMargin: "0px", threshold: 0 });
+  document.querySelectorAll('.reveal').forEach(function(el){
+    io.observe(el);
+  });
+})();
+</script>
+</body>
+</html>
