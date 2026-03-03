@@ -416,11 +416,46 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
   .stats-inner{grid-template-columns:1fr}
   .staff-grid{grid-template-columns:1fr}
 }
+
+/* ── MOBILE CTA ── */
+.mobile-cta{display:none}
+
+/* ── HAMBURGER MENU ── */
+.hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:0}
+.hamburger span,.hamburger span::before,.hamburger span::after{display:block;width:20px;height:2px;background:var(--navy);position:relative;transition:all .3s}
+.hamburger span::before,.hamburger span::after{content:'';position:absolute;left:0}
+.hamburger span::before{top:-6px}
+.hamburger span::after{top:6px}
+.hamburger.active span{background:transparent}
+.hamburger.active span::before{top:0;transform:rotate(45deg)}
+.hamburger.active span::after{top:0;transform:rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.1);z-index:99;padding:8px 0}
+.mobile-nav.open{display:block}
+.mobile-nav a{display:block;padding:16px 24px;font-size:15px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--border);transition:background .2s}
+.mobile-nav a:last-child{border-bottom:none}
+.mobile-nav a:active{background:var(--off)}
+@media(max-width:768px){
+  .hamburger{display:flex}
+  .header-nav{display:none !important}
+  .header-tel a{padding:9px 14px;font-size:13px;gap:6px}
+  .mobile-cta{
+    display:block;
+    background:var(--navy-m);padding:48px 20px;text-align:center;
+    position:relative;overflow:hidden
+  }
+  .mobile-cta::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse at center,rgba(192,57,43,.12) 0%,transparent 70%)
+  }
+  .mobile-cta p{color:rgba(255,255,255,.45);font-size:14px;margin-bottom:20px;position:relative}
+  .mobile-cta .btn-call{position:relative;margin:0 auto}
+}
 </style>
 </head>
 <body>
 
 <header>
+  <button class="hamburger" aria-label="メニュー"><span></span></button>
   <div class="logo">
     <a href="/">
       <img src="images/logo.png" alt="カートラブル110番" width="200" height="38"
@@ -440,6 +475,12 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
     </a>
   </div>
 </header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="/battery/">バッテリー上がり</a>
+  <a href="/tire/">パンク・タイヤ交換</a>
+  <a href="/tow-truck/">レッカー搬送</a>
+</nav>
 
 <!-- HERO -->
 <section class="hero">
@@ -523,6 +564,15 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
     </div>
   </div>
 </section>
+
+<!-- MOBILE CTA -->
+<div class="mobile-cta">
+  <p class="reveal">まずはお気軽にお電話ください。24時間365日対応しています。</p>
+  <a href="tel:050-1721-7231" class="btn-call reveal">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    050-1721-7231
+  </a>
+</div>
 
 <!-- REASONS -->
 <section class="reasons sec">
@@ -781,6 +831,16 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
   },{ rootMargin: "0px", threshold: 0 });
   var statsEl = document.querySelector('.stats');
   if(statsEl) countIO.observe(statsEl);
+
+  // ── Hamburger menu ──
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  if(hamburger && mobileNav){
+    hamburger.addEventListener('click', function(){
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('open');
+    });
+  }
 
   // ── Header shadow on scroll ──
   var header = document.querySelector('header');
