@@ -246,9 +246,16 @@ header{
 /* ── CTA MINI (PC only) ── */
 .cta-mini{display:none}
 @media(min-width:769px){
-  .cta-mini{background:var(--navy);padding:48px 32px;text-align:center;position:relative;overflow:hidden}
-  .cta-mini p{color:rgba(255,255,255,.7);font-size:14px;margin-bottom:20px}
-  .cta-mini .btn-call-lt{font-size:clamp(18px,2vw,24px);padding:14px 36px}
+  .cta-mini{
+    background:var(--navy);padding:56px 32px;text-align:center;position:relative;overflow:hidden;
+    display:block;
+  }
+  .cta-mini h3{color:#fff;font-size:clamp(18px,2.2vw,26px);font-weight:800;margin-bottom:8px}
+  .cta-mini p{color:rgba(255,255,255,.7);font-size:14px;margin-bottom:24px}
+  .cta-mini .btn-call-lt{font-size:clamp(20px,2.5vw,28px);padding:16px 40px}
+}
+@media(max-width:768px){
+  .cta-mini{display:none !important}
 }
 
 /* ── FOOTER & STICKY ── */
@@ -305,7 +312,7 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
   <p class="reveal d2">エンジンがかからない、セルが回らないトラブルに！プロの機材によるジャンピングスタートで速やかにエンジンを復旧させます。プリウスなどのハイブリッド車も対応可能です。</p>
 </section>
 
-<section class="sec sec-bg">
+<section class="sec" style="background:#f5f5f5">
   <div class="sec-in">
     <div class="s-hd reveal">
       <h2 class="s-ttl">このようなバッテリーのトラブルで<br>お困りですか？</h2>
@@ -382,14 +389,15 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
 </section>
 
 <div class="cta-mini">
-  <p>バッテリー上がりでお困りですか？今すぐお電話ください</p>
+  <h3>バッテリー上がりでお困りですか？</h3>
+  <p>お電話一本で、最短10分でスタッフが急行します</p>
   <a href="tel:050-1721-7231" class="btn-call-lt">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
     050-1721-7231
   </a>
 </div>
 
-<section class="sec sec-bg">
+<section class="sec" style="background:#f5f5f5">
   <div class="sec-in">
     <div class="s-hd reveal">
       <h2 class="s-ttl">バッテリー上がり復旧作業の料金表</h2>
@@ -415,14 +423,15 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
 </section>
 
 <div class="cta-mini">
-  <p>到着時間と概算料金をすぐにお調べいたします</p>
+  <h3>到着時間と概算料金をすぐにお調べします</h3>
+  <p>お見積り無料・追加請求なしの明朗会計です</p>
   <a href="tel:050-1721-7231" class="btn-call-lt">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
     050-1721-7231
   </a>
 </div>
 
-<section class="sec">
+<section class="sec" style="background:#f5f5f5">
   <div class="sec-in">
     <div class="s-hd reveal">
       <h2 class="s-ttl">ご依頼からエンジン始動（解決）までの流れ</h2>
@@ -464,14 +473,15 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
 </section>
 
 <div class="cta-mini">
-  <p>24時間365日対応・まずはお気軽にお電話ください</p>
+  <h3>24時間365日対応・まずはお気軽にお電話ください</h3>
+  <p>深夜・早朝・土日祝もスタッフが待機しています</p>
   <a href="tel:050-1721-7231" class="btn-call-lt">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
     050-1721-7231
   </a>
 </div>
 
-<section class="sec sec-bg">
+<section class="sec">
   <div class="sec-in">
     <div class="s-hd reveal">
       <h2 class="s-ttl">バッテリー上がりのよくあるご質問</h2>
@@ -494,7 +504,7 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
   </div>
 </section>
 
-<section class="sec">
+<section class="sec" style="background:#f5f5f5">
   <div class="sec-in reveal">
     <div class="s-hd">
       <h2 class="s-ttl">関東エリア スピード出動対応地域</h2>
