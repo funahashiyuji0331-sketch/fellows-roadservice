@@ -239,7 +239,9 @@ header{
   transition:border-color .3s,box-shadow .4s,transform .4s
 }
 .r-card:hover{border-top-color:var(--red);box-shadow:0 20px 60px rgba(0,0,0,.08);transform:translateY(-6px)}
-.r-num{font-size:10px;font-weight:700;color:var(--red);letter-spacing:3px;margin-bottom:20px;text-transform:uppercase}
+.r-num{position:relative;font-size:11px;font-weight:700;color:var(--red);letter-spacing:3px;margin-bottom:24px;text-transform:uppercase;padding-top:40px}
+.r-num::before{content:attr(data-num);position:absolute;top:0;left:0;font-size:60px;font-weight:900;color:rgba(192,57,43,.07);line-height:1;letter-spacing:-3px;transform:translateY(12px) scale(.85);opacity:0;transition:transform .8s cubic-bezier(.16,1,.3,1),opacity .6s ease}
+.r-card.visible .r-num::before{transform:translateY(0) scale(1);opacity:1}
 .r-ic{width:40px;height:40px;color:var(--navy);margin-bottom:20px;transition:transform .3s}
 .r-card:hover .r-ic{transform:scale(1.1) rotate(-5deg)}
 .r-card h3{font-size:15px;font-weight:700;color:var(--navy);line-height:1.6;margin-bottom:12px}
@@ -585,21 +587,21 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
     </div>
     <div class="r-list">
       <div class="r-card reveal d1">
-        <div class="r-num">Reason 01</div>
+        <div class="r-num" data-num="01">Reason 01</div>
         <svg class="r-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         <h3>法外な請求・現場での<br>不当な釣り上げは一切なし</h3>
         <p>「キャンセル料10万円と言われた」——悪徳業者の被害は全国で多発しています。当社は料金設定が明確で、現場でのトラブルは一切ありません。</p>
         <span class="r-hl">現場復旧 1〜2万円 / レッカー搬送 1km＝800円</span>
       </div>
       <div class="r-card reveal d2">
-        <div class="r-num">Reason 02</div>
+        <div class="r-num" data-num="02">Reason 02</div>
         <svg class="r-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
         <h3>自動車保険の<br>ロードサービス適用もOK</h3>
         <p>手持ちの現金がなくてもご安心ください。ご加入の任意保険を使ったご請求に対応可能。保険会社へ連絡いただければ実質負担0円になる場合があります。</p>
         <span class="r-hl">実質負担 0円になる場合あり</span>
       </div>
       <div class="r-card reveal d3">
-        <div class="r-num">Reason 03</div>
+        <div class="r-num" data-num="03">Reason 03</div>
         <svg class="r-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
         <h3>「運ぶだけ」じゃない。<br>その場での解決を最優先</h3>
         <p>バッテリー上がりもパンクも、まずは現場で直してご自身の車でお帰りいただくことを最優先します。搬送ありきの対応は一切しません。</p>
