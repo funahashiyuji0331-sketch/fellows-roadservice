@@ -326,8 +326,14 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
 .mobile-nav a{display:block;padding:16px 24px;font-size:15px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--border);transition:background .2s}
 .mobile-nav a:last-child{border-bottom:none}
 .mobile-nav a:active{background:var(--off)}
+.header-nav{display:flex;align-items:center;gap:28px}
+.header-nav a{font-size:13px;font-weight:600;color:var(--navy);padding:4px 0;position:relative;transition:color .2s;letter-spacing:.3px}
+.header-nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--red);transition:width .3s}
+.header-nav a:hover{color:var(--red)}
+.header-nav a:hover::after{width:100%}
 @media(max-width:768px){
   .hamburger{display:flex}
+  .header-nav{display:none !important}
   .header-tel a{padding:9px 14px;font-size:13px;gap:6px}
 }
 </style>
@@ -343,6 +349,11 @@ footer{background:#060c14;color:rgba(255,255,255,.25);text-align:center;padding:
       <div class="logo-text" style="display:none">カートラブル<span>110番</span></div>
     </a>
   </div>
+  <nav class="header-nav">
+    <a href="/battery/">バッテリー</a>
+    <a href="/tire/">パンク</a>
+    <a href="/tow-truck/">レッカー</a>
+  </nav>
   <div class="header-tel">
     <a href="tel:050-1721-7231">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
